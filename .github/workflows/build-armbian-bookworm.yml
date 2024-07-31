@@ -11,8 +11,8 @@ on:
     inputs:
       set_release:
         description: "Select OS Release."
-        required: false
-        default: "jammy"
+        required: true
+        default: false
         type: choice
         options:
           - jammy
@@ -21,7 +21,7 @@ on:
           - bookworm
       armbian_board:
         description: "Select device board."
-        required: false
+        required: true
         default: "all"
         type: choice
         options:
@@ -167,7 +167,7 @@ on:
           - zysj
       armbian_kernel:
         description: "Select kernel version."
-        required: false
+        required: true
         default: "6.6.y"
         type: choice
         options:
@@ -227,7 +227,7 @@ on:
           - yourname
 
 env:
-  TZ: America/New_York
+  TZ: America/Sao_Paulo
   ROOTFS_SCRIPT: compile-kernel/tools/script/armbian_rootfs.sh
 
 jobs:
